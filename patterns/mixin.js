@@ -6,7 +6,7 @@ class ObservableMixin{
     subscribe(event, callback) {
         this.listeners = this.listeners[event] ? [...this.listeners[event], callback] : [callback];
         return () => {
-            this.removeEventListener(event, callback);
+            this.unsubscribe(event, callback);
         }
     }
 
