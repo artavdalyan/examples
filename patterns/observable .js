@@ -94,6 +94,27 @@
     modules.SomeService = SomeService; // export module
 })(window._all_modules || (window._all_modules = {}));
 
+//example 5
+(function (modules) {
+    'use strict';
+
+    class SomeService {
+        constructor() {
+            this.observers = {};
+        }
+
+        addObserver(event, callback) {
+        }
+
+        removeObserver(event, callback) {
+        }
+
+        notifyObserver(eventName, eventData) {
+        }
+    }
+
+    modules.SomeService = SomeService; // export module
+})(window._all_modules || (window._all_modules = {}));
 const SomeService = window._all_modules.SomeService;
 const service = new SomeService();
 const callback = () => {
