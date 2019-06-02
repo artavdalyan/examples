@@ -19,9 +19,13 @@
         }
 
         emitEvent(eventName, eventData) {
+          try{
             this.listeners[eventName].forEach(func => {
                 func.call(null, eventData);
             })
+          } catch (e) {
+              console.error(e.message);
+          }
         }
     }
 
